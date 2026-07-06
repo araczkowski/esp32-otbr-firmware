@@ -1,8 +1,8 @@
 # ESP32 OpenThread RCP firmware with USB UART retry patch
 
-Builds reproducible-ish ESP32-C5, ESP32-C6, and ESP32-H2 OpenThread RCP firmware for Home Assistant OTBR.
+Builds reproducible ESP32-C5, ESP32-C6, and ESP32-H2 OpenThread RCP firmware for Home Assistant OTBR.
 
-This is **not ESPHome firmware**. The ESP32 becomes an OpenThread RCP radio used by the Home Assistant OpenThread Border Router add-on.
+By flashing this firmware the ESP32 becomes an OpenThread RCP radio used by the Home Assistant OpenThread Border Router add-on.
 
 ## What it builds
 
@@ -18,6 +18,7 @@ Each artifact also includes the component images used to make the merged binary:
 - `bootloader.bin`
 - `partition-table.bin`
 - `esp_ot_rcp.bin`
+- `esp_ot_rcp.bin.md5`
 - `idf-commit.txt`
 
 ## Releases
