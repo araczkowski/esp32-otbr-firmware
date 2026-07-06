@@ -50,14 +50,16 @@ The workflow pins:
 - Ubuntu runner image
 - Python version
 
-For stricter reproducibility, replace the ESP-IDF tag with a specific commit SHA.
+## Patch 
 
-## Patch
-
-Patch source: Home Assistant Community post #74, where the issue is described as USB UART sends intermittently failing and the proposed workaround is retrying until success.
+Patch source: Home Assistant Community post [#74](https://community.home-assistant.io/t/make-your-own-thread-border-router-for-just-5/962780/74), where the issue is described as USB UART sends intermittently failing and the proposed workaround is retrying until success.
 
 The patch is stored at:
 
 ```text
 patches/0001-openthread-usb-uart-retry-send.patch
 ```
+# Credits
+
+- Information about the firmware, instructions and patch: [Make your own Thread Border Router for just $5](https://community.home-assistant.io/t/make-your-own-thread-border-router-for-just-5/962780)
+- Docs: [openthread.io ESP Thread Border Router](https://openthread.io/guides/border-router/espressif-esp32)
