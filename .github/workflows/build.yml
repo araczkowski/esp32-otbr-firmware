@@ -57,15 +57,15 @@ jobs:
 
     steps:
       - name: Checkout this repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
       - name: Cache ESP-IDF tools
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ env.IDF_TOOLS_PATH }}
           key: esp-idf-tools-${{ runner.os }}-${{ env.IDF_REF }}-${{ env.TARGET }}
@@ -160,7 +160,7 @@ jobs:
           cp idf-commit.txt artifacts/
 
       - name: Upload firmware artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.firmware }}
           path: artifacts/
@@ -177,7 +177,7 @@ jobs:
 
     steps:
       - name: Download firmware artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           path: release-assets
 
@@ -206,7 +206,7 @@ jobs:
           find release -maxdepth 1 -type f -print | sort
 
       - name: Create a GitHub release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         id: create_release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
