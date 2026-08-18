@@ -170,7 +170,8 @@ jobs:
   release:
     name: Publish GitHub release
     needs: build
-    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+    # run if tag 'v*' or if started by hand (workflow_dispatch)
+    if: ${{ startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-24.04
     permissions:
       contents: write
